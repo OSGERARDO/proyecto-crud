@@ -19,13 +19,13 @@ formulario.addEventListener('submit', validarFormulario);
 function validarFormulario(e) {
     e.preventDefault();
 
-    if(nombreInput.value === "" || cantidadInput === "") {
+    if(nombreInput.value === "" || cantidadInput.value === "") {
         alert('Todos los campos son obligatorios');
         return;
     }
     if(editando) {
         //Editar Producto
-        editarProducto();
+        editarProducto ();
         editando = false;
     } else {
         objProducto.id = Date.now();
@@ -51,7 +51,7 @@ function agregarProducto() {
 function limpiarObjeto() {  //limpiar objeto
     objProducto.id = '';
     objProducto.nombre = '';
-    objProducto,cantidad = '';
+    objProducto.cantidad = '';
 }
 
 
@@ -72,14 +72,14 @@ function mostrarProductos() {
         parrafo.dataset.id = id;
 
         const editarBoton = document.createElement('button');
-        editarBoton.onclik = () => cargarProducto(producto);
+        editarBoton.onclick = () => cargarProducto(producto);
         editarBoton.textContent = 'Editar';
         editarBoton.classList.add('btn', 'btn-editar');
         parrafo.append(editarBoton);
 
 
         const eliminarBoton = document.createElement('button');
-        //eliminarBoton.onclik = () => eliminarProducto(id);//
+        eliminarBoton.onclick = () => eliminarProducto(id);
         eliminarBoton.textContent = 'Eliminar';
         eliminarBoton.classList.add('btn', 'btn-eliminar');
         parrafo.append(eliminarBoton);
@@ -104,7 +104,7 @@ function cargarProducto(producto) {
 
     objProducto.id = id;
 
-    formulario.querySelector('button[type="submit"]').textContent ='Actualizar';
+    formulario.querySelector('button[type="submit"]').textContent = 'Actualizar';
 
     editando = true;
 }
@@ -113,7 +113,7 @@ function editarProducto () {
     objProducto.nombre = nombreInput.value;
     objProducto.cantidad = cantidadInput.value;
 
-    listaProductos.map( producto => {
+    listaProductos.map(producto => {
 
         if(producto.id === objProducto.id) {
             producto.id = objProducto.id;
@@ -121,27 +121,28 @@ function editarProducto () {
             producto.cantidad = objProducto.cantidad;
         }
 
+    });
 
 
 
-
-
-    })
 limpiarHTML();
 mostrarProductos();
 
 formulario.reset();
 
-formulario.querySelector('button[type="submit]').textContent = 'Agregar'
+formulario.querySelector('button[type="submit"]').textContent = 'Agregar';
 
 editando = false;
 
 }
 
+function eliminarProducto(id) {
 
+    listaProductos = listaProductos.filter(producto => producto.id !== id);
 
-
-
+    limpiarHTML();
+    mostrarProductos();
+}
 
 function limpiarHTML() {
     const divProductos = document.querySelector('.div-productos')
