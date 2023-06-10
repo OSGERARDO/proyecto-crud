@@ -1,4 +1,4 @@
-Aplicación de Lista de Compras (CRUD)
+# Aplicación de Lista de Compras (CRUD) :bulb:
 
 https://osgerardo.github.io/proyecto-crud.github.io/
 
