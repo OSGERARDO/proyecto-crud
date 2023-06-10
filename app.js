@@ -4,9 +4,10 @@ const objProducto = {
     id: '',
     nombre: '',
     cantidad:''
-}
+}; // Objeto para representar un producto
 
-let editando = false;
+let editando = false;  //Variable para controlar si se está editando un producto
+
 
 const formulario = document.querySelector('#formulario');
 const nombreInput = document.querySelector('#nombre');
@@ -17,10 +18,10 @@ const btnAgregarInput = document.querySelector('#btnAgregar');
 formulario.addEventListener('submit', validarFormulario);
 
 function validarFormulario(e) {
-    e.preventDefault();
+    e.preventDefault(); // Evitar que el formulario se envíe y la página se recargue
 
     if(nombreInput.value === "" || cantidadInput.value === "") {
-        alert('Todos los campos son obligatorios');
+        alert('Todos los campos son obligatorios'); // Mostrar una alerta si faltan campos por completar
         return;
     }
     if(editando) {
@@ -32,7 +33,7 @@ function validarFormulario(e) {
         objProducto.nombre = nombreInput.value;
         objProducto.cantidad = cantidadInput.value;
 
-        agregarProducto();
+        agregarProducto(); // Llamar a la función para agregar el producto a la lista
 }
 
 }
@@ -71,14 +72,14 @@ function mostrarProductos() {
         parrafo.textContent = ` ${id} - ${nombre} - ${cantidad} - `;
         parrafo.dataset.id = id;
 
-        const editarBoton = document.createElement('button');
+        const editarBoton = document.createElement('button');// Crear un boton para editar el producto
         editarBoton.onclick = () => cargarProducto(producto);
         editarBoton.textContent = 'Editar';
         editarBoton.classList.add('btn', 'btn-editar');
         parrafo.append(editarBoton);
 
 
-        const eliminarBoton = document.createElement('button');
+        const eliminarBoton = document.createElement('button'); // Crear un botón para eliminar el producto
         eliminarBoton.onclick = () => eliminarProducto(id);
         eliminarBoton.textContent = 'Eliminar';
         eliminarBoton.classList.add('btn', 'btn-eliminar');
