@@ -16,11 +16,12 @@ JavaScript: para implementar la lógica de la aplicación y manejar las interacc
 Estructura de Archivos
 El proyecto se organiza en la siguiente estructura de archivos:
 
-Copy code
-├── index.html
-├── styles.css
-├── script.js
-└── README.md
+
+ index.html,
+ styles.css,
+ script.js,
+ README.md,
+ 
 index.html: contiene la estructura HTML de la página y el marcado de los elementos de la lista de compras.
 styles.css: archivo CSS que proporciona los estilos y el diseño visual para la interfaz de usuario.
 script.js: archivo JavaScript que implementa la lógica de la aplicación, como agregar, editar y eliminar elementos de la lista de compras.
