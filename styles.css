@@ -169,3 +169,25 @@ hr {
  .footer{
     color: #030303;
  }
+
+
+
+
+ @media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+    }
+
+    .contenedor .div-formulario,
+    .contenedor .div-listado {
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    .contenedor .div-formulario form input,
+    .contenedor .div-formulario form button {
+        width: 100%;
+    }
+}
