@@ -1,4 +1,7 @@
 Aplicación de Lista de Compras (CRUD)
+
+https://osgerardo.github.io/proyecto-crud.github.io/
+
 Esta es una aplicación web de Lista de Compras que te permite gestionar tus listas de compras de manera fácil y rápida. Puedes crear nuevas listas, agregar elementos a ellas, editar los elementos existentes y eliminarlos según sea necesario. La aplicación está desarrollada utilizando HTML, CSS y JavaScript.
 
 Funcionalidades
@@ -21,7 +24,7 @@ El proyecto se organiza en la siguiente estructura de archivos:
  styles.css,
  script.js,
  README.md,
- 
+
 index.html: contiene la estructura HTML de la página y el marcado de los elementos de la lista de compras.
 styles.css: archivo CSS que proporciona los estilos y el diseño visual para la interfaz de usuario.
 script.js: archivo JavaScript que implementa la lógica de la aplicación, como agregar, editar y eliminar elementos de la lista de compras.
